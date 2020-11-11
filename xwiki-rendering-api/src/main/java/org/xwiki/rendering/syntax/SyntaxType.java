@@ -177,7 +177,9 @@ public class SyntaxType implements Comparable<SyntaxType>
 
     /**
      * @return the well-known Syntax types
+     * @deprecated since 12.10RC1, use {@link SyntaxRegistry#getSyntaxes()}
      */
+    @Deprecated
     public static Map<String, SyntaxType> getSyntaxTypes()
     {
         return KNOWN_SYNTAX_TYPES;

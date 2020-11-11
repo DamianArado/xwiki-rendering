@@ -219,7 +219,9 @@ public class Syntax implements Comparable<Syntax>
      * @return the parsed syntax as a Syntax object
      * @throws ParseException in case the string doesn't represent a valid syntax
      * @since 9.8RC1
+     * @deprecated since 12.10RC1, use {@link SyntaxRegistry#getSyntax(String)}
      */
+    @Deprecated
     public static Syntax valueOf(String syntaxIdAsString) throws ParseException
     {
         if (syntaxIdAsString == null) {
