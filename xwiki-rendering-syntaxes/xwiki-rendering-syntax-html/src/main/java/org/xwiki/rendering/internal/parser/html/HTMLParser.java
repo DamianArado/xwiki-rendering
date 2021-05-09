@@ -35,6 +35,8 @@ import org.xwiki.rendering.syntax.Syntax;
 import org.xwiki.xml.html.HTMLCleaner;
 import org.xwiki.xml.html.HTMLUtils;
 
+import static org.xwiki.rendering.internal.html.HTML401SyntaxProvider.HTML_4_01;
+
 /**
  * Parses HTML and generate a {@link XDOM} object.
  *
@@ -55,7 +57,7 @@ public class HTMLParser extends XHTMLParser
     @Override
     public Syntax getSyntax()
     {
-        return Syntax.HTML_4_01;
+        return HTML_4_01;
     }
 
     @Override

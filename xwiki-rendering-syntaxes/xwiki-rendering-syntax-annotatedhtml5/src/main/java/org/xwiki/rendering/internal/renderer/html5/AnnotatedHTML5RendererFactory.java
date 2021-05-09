@@ -23,6 +23,7 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
+import org.xwiki.rendering.internal.html5.AnnotatedHTML5SyntaxProvider;
 import org.xwiki.rendering.internal.renderer.AbstractPrintRendererFactory;
 import org.xwiki.rendering.syntax.Syntax;
 
@@ -40,6 +41,6 @@ public class AnnotatedHTML5RendererFactory extends AbstractPrintRendererFactory
     @Override
     public Syntax getSyntax()
     {
-        return Syntax.ANNOTATED_HTML_5_0;
+        return AnnotatedHTML5SyntaxProvider.ANNOTATED_HTML_5_0;
     }
 }

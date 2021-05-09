@@ -53,7 +53,10 @@ import org.xwiki.rendering.util.IdGenerator;
 import org.xwiki.rendering.wikimodel.IWikiParser;
 import org.xwiki.rendering.wikimodel.xhtml.XhtmlParser;
 import org.xwiki.rendering.wikimodel.xhtml.handler.TagHandler;
+import org.xwiki.rendering.wikimodel.xhtml.impl.TagStack;
 import org.xwiki.xml.XMLReaderFactory;
+
+import static org.xwiki.rendering.internal.xhtml.XHTML10SyntaxProvider.XHTML_1_0;
 
 /**
  * Parses XHTML and generate a {@link org.xwiki.rendering.block.XDOM} object.
@@ -70,8 +73,7 @@ public class XHTMLParser extends AbstractWikiModelParser
      * The parser used for the link label parsing. For (x)html parsing, this will be an xwiki 2.0 parser, since it's
      * more convenient to pass link labels in xwiki syntax. See referred resource for more details.
      *
-     * @see XWikiCommentHandler#handleLinkCommentStop(String,
-     *      org.xwiki.rendering.wikimodel.xhtml.impl.TagStack)
+     * @see XWikiCommentHandler#handleLinkCommentStop(TagStack)
      */
     @Inject
     @Named("xdom+xml/current")
@@ -119,7 +121,7 @@ public class XHTMLParser extends AbstractWikiModelParser
     @Override
     public Syntax getSyntax()
     {
-        return Syntax.XHTML_1_0;
+        return XHTML_1_0;
     }
 
     @Override
